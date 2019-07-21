@@ -1,0 +1,26 @@
+[
+  {
+    "Username": "user1@mockpremierleague.com",
+    "Created": "2019-07-06",
+    "LastActive": "2019-07-06",
+    "IsActive": true
+  },
+  {
+    "Username": "user2@mockpremierleague.com",
+    "Created": "2019-07-06",
+    "LastActive": "2019-07-06",
+    "IsActive": true
+  },
+  {
+    "Username": "user3@mockpremierleague.com",
+    "Created": "2019-07-06",
+    "LastActive": "2019-07-06",
+    "IsActive": true
+  },
+  {
+    "Username": "user4@mockpremierleague.com",
+    "Created": "2019-07-06",
+    "LastActive": "2019-07-06",
+    "IsActive": true
+  }
+]
