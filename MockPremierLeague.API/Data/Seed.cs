@@ -46,7 +46,8 @@ namespace MockPremierLeague.API.Data
 
                 var adminUser = new User
                 {
-                    UserName = "admin@mockpremierleague.com"
+                    UserName = "admin@mockpremierleague.com",
+                    IsActive=true
                 };
 
                 IdentityResult result = _userManager.CreateAsync(adminUser, "admin@2019").Result;

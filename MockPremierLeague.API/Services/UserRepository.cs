@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 namespace MockPremierLeague.API.Services
 {
     public class UserRepository : IUserRepository
-
     {
+        public UserRepository()
+        {
+
+        }
         public Task<List<Fixture>> GetAllFixture()
         {
             throw new NotImplementedException();

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using MockPremierLeague.API.Dtos;
+using MockPremierLeague.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,8 @@ namespace MockPremierLeague.API.Helpers
     {
         public AutoMapperProfiles()
         {
-            
+            //Teams
+            CreateMap<TeamDto ,Team>();
         }
     }
 }

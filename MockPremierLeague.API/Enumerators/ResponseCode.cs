@@ -8,7 +8,8 @@ namespace MockPremierLeague.API.Enumerators
     public enum ResponseCode
     {
         Success = 1,
-        Error = 2,
-        RecordNotFound = 3
+        Failed = 2,
+        Error = 3,
+        RecordNotFound = 4
     }
 }

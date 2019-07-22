@@ -11,15 +11,17 @@ namespace MockPremierLeague.API.Contracts
     {
         //Manage Team
         Task<Team> CreateTeam(TeamDto teamDto);
-        Task<Team> UpdateTeam(TeamDto teamDto, int id);
-        Task<Team> DeleteTeam(int id);
+        Task<Team> UpdateTeam(TeamDto teamToUpdate, int id);
+        Task<bool> DeleteTeam(int id);
         Task<List<Team>> GetAllTeams();
         Task<Team> GetTeamById(int id);
+        Task<bool> ValidateTeam(string teamName);
+        Task<bool> ValidateTeam(string teamName, int id);
 
         //Manage Fixtures
         Task<Fixture> CreateFixture(FixtureDto teamDto);
         Task<Fixture> UpdateFixture(FixtureDto teamDto, int id);
-        Task<Fixture> DeleteFixture(int id);
+        Task<bool> DeleteFixture(int id);
         Task<List<Fixture>> GetAllFixture();
         Task<Fixture> GetFixtureByURL(string uniqueURL);
     }

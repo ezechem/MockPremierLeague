@@ -21,9 +21,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using MockPremierLeague.API.Contracts;
 using MockPremierLeague.API.Data;
 using MockPremierLeague.API.Extensions;
 using MockPremierLeague.API.Models;
+using MockPremierLeague.API.Services;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace MockPremierLeague.API
@@ -106,6 +108,8 @@ namespace MockPremierLeague.API
             Mapper.Reset();
             services.AddAutoMapper();
             services.AddTransient<Seed>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddCors();
         }
 
