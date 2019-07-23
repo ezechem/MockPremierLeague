@@ -108,8 +108,8 @@ namespace MockPremierLeague.API
             Mapper.Reset();
             services.AddAutoMapper();
             services.AddTransient<Seed>();
-            services.AddScoped<IAdminRepository, AdminRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<IFixtureRepository, FixtureRepository>();
             services.AddCors();
         }
 

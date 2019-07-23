@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MockPremierLeague.API.Dtos
 {
 
-    public class UserForRegistrationDto
+    public class UserForAdminRegistrationDto
     {
         [Required]
         public string FirstName { get; set; }
@@ -27,9 +27,12 @@ namespace MockPremierLeague.API.Dtos
         public DateTime DateCreated { get; set; }
 
         public DateTime LastActive { get; set; }
-        public bool IsActive { get; set; }      
+        public bool IsActive { get; set; }
 
-        public UserForRegistrationDto()
+        [Required]
+        public List<string> Roles { get; set; }
+
+        public UserForAdminRegistrationDto()
         {
             DateCreated = DateTime.Now;
             LastActive = DateTime.Now;

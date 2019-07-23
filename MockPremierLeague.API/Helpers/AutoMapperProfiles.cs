@@ -12,8 +12,15 @@ namespace MockPremierLeague.API.Helpers
     {
         public AutoMapperProfiles()
         {
+            //Users
+            CreateMap<UserForRegistrationDto, User>();
+            CreateMap<UserForAdminRegistrationDto, User>();
+
             //Teams
             CreateMap<TeamDto ,Team>();
+
+            //Fixtures
+            CreateMap<FixtureDto, Fixture>();
         }
     }
 }

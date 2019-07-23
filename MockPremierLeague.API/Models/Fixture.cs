@@ -12,8 +12,8 @@ namespace MockPremierLeague.API.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int HomeTeam { get; set; }
-        public int AwayTeam { get; set; }
+        public int HomeTeamId { get; set; }
+        public int AwayTeamId { get; set; }
         public string MatchCode { get; set; }
         public string Staduim { get; set; }
         [Column(TypeName = "date")]
@@ -21,5 +21,7 @@ namespace MockPremierLeague.API.Models
         public TimeSpan MatchTime { get; set; }
         public bool Status { get; set; }
         public string FixtureURL { get; set; }
+        public Team HomeTeam { get; set; }
+        public Team AwayTeam { get; set; }
     }
 }

@@ -9,9 +9,9 @@ namespace MockPremierLeague.API.Dtos
     public class FixtureDto
     {
         [Required]
-        public int HomeTeam { get; set; }
+        public int HomeTeamId { get; set; }
         [Required]
-        public int AwayTeam { get; set; }
+        public int AwayTeamId { get; set; }
         [Required]
         public string MatchCode { get; set; }
         [Required]

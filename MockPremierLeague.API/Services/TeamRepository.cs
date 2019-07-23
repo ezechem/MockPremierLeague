@@ -11,20 +11,14 @@ using System.Threading.Tasks;
 
 namespace MockPremierLeague.API.Services
 {
-    public class AdminRepository : IAdminRepository
+    public class TeamRepository : ITeamRepository
     {
         private readonly AppDbContext _appDbContext;
         private readonly IMapper _mapper;
-        public AdminRepository( AppDbContext appDbContext, IMapper mapper)
+        public TeamRepository( AppDbContext appDbContext, IMapper mapper)
         {
             _appDbContext = appDbContext;
             _mapper = mapper;
-        }
-
-
-        public Task<Fixture> CreateFixture(FixtureDto teamDto)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<Team> CreateTeam(TeamDto teamDto)
@@ -37,11 +31,6 @@ namespace MockPremierLeague.API.Services
                 return newTeam;
             }
             return null;
-        }
-
-        public async Task<bool> DeleteFixture(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<bool> DeleteTeam(int id)
@@ -57,32 +46,22 @@ namespace MockPremierLeague.API.Services
                 return false;
             }
             return false;
-        }
+        }    
 
-        public Task<List<Fixture>> GetAllFixture()
+        public async Task<List<Team>> GetAllTeams()
         {
-            throw new NotImplementedException();
+            var teams = await _appDbContext.Teams.ToListAsync();
+            if (teams != null)
+            {
+                return teams;
+            }
+            return null;
         }
-
-        public Task<List<Team>> GetAllTeams()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Fixture> GetFixtureByURL(string uniqueURL)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public async Task<Team> GetTeamById(int id)
         {
             var teamDetails = await _appDbContext.Teams.Where(x => x.Id == id).FirstOrDefaultAsync();
             return teamDetails;
-        }
-
-        public Task<Fixture> UpdateFixture(FixtureDto teamDto, int id)
-        {
-            throw new NotImplementedException();
         }
 
        public async Task<Team> UpdateTeam(TeamDto teamToUpdate, int id)
@@ -101,6 +80,34 @@ namespace MockPremierLeague.API.Services
             return null;
         }
 
+        public async Task<List<Team>> SearchTeam(object searchParams)
+        {
+            List<Team> foundTeam = new List<Team>();
+            long yearFounded;
+
+
+            if (long.TryParse((string)searchParams, out yearFounded))
+            {
+                foundTeam = await _appDbContext.Teams
+                    .Where(t => t.YearFounded == yearFounded)
+               .ToListAsync();
+            }
+            else
+            {
+                foundTeam = await _appDbContext.Teams
+                    .Where(f => f.Name.Contains((string)searchParams)
+                    || f.Code.Contains((string)searchParams)
+                    || f.Address.Contains((string)searchParams)
+                    || f.CoachName.Contains((string)searchParams))
+                    .ToListAsync();
+            }
+
+            if (foundTeam != null)
+                return foundTeam;
+
+            return null;
+        }
+
         public async Task<bool> ValidateTeam(string teamName)
         {
             var teamExist = await _appDbContext.Teams.AnyAsync(x => x.Name == teamName);
@@ -112,6 +119,5 @@ namespace MockPremierLeague.API.Services
             var teamExist = await _appDbContext.Teams.AnyAsync(x => x.Name == teamName && x.Id != id);
             return teamExist;
         }
-
     }
 }

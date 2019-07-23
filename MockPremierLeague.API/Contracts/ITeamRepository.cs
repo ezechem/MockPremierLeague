@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MockPremierLeague.API.Contracts
 {
-    public interface IAdminRepository
+    public interface ITeamRepository
     {
         //Manage Team
         Task<Team> CreateTeam(TeamDto teamDto);
@@ -17,12 +17,6 @@ namespace MockPremierLeague.API.Contracts
         Task<Team> GetTeamById(int id);
         Task<bool> ValidateTeam(string teamName);
         Task<bool> ValidateTeam(string teamName, int id);
-
-        //Manage Fixtures
-        Task<Fixture> CreateFixture(FixtureDto teamDto);
-        Task<Fixture> UpdateFixture(FixtureDto teamDto, int id);
-        Task<bool> DeleteFixture(int id);
-        Task<List<Fixture>> GetAllFixture();
-        Task<Fixture> GetFixtureByURL(string uniqueURL);
+        Task<List<Team>> SearchTeam(object searchParams);
     }
 }
