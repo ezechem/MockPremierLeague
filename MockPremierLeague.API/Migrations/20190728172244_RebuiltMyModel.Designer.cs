@@ -10,8 +10,8 @@ using MockPremierLeague.API.Data;
 namespace MockPremierLeague.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190716173556_InitialModel")]
-    partial class InitialModel
+    [Migration("20190728172244_RebuiltMyModel")]
+    partial class RebuiltMyModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,9 +97,11 @@ namespace MockPremierLeague.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AwayTeam");
+                    b.Property<int>("AwayTeamId");
 
-                    b.Property<int>("HomeTeam");
+                    b.Property<string>("FixtureURL");
+
+                    b.Property<int>("HomeTeamId");
 
                     b.Property<string>("MatchCode");
 
@@ -113,6 +115,10 @@ namespace MockPremierLeague.API.Migrations
                     b.Property<bool>("Status");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AwayTeamId");
+
+                    b.HasIndex("HomeTeamId");
 
                     b.ToTable("Fixtures");
                 });
@@ -155,6 +161,8 @@ namespace MockPremierLeague.API.Migrations
                     b.Property<string>("Code");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("Stadium");
 
                     b.Property<long>("YearFounded");
 
@@ -269,6 +277,19 @@ namespace MockPremierLeague.API.Migrations
                     b.HasOne("MockPremierLeague.API.Models.User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MockPremierLeague.API.Models.Fixture", b =>
+                {
+                    b.HasOne("MockPremierLeague.API.Models.Team", "AwayTeam")
+                        .WithMany()
+                        .HasForeignKey("AwayTeamId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MockPremierLeague.API.Models.Team", "HomeTeam")
+                        .WithMany()
+                        .HasForeignKey("HomeTeamId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

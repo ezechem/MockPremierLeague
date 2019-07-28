@@ -16,6 +16,7 @@ namespace MockPremierLeague.API.Models
         public string  Code { get; set; }
         public string Address { get; set; }
         public string CoachName { get; set; }
+        public string Stadium { get; set; }
         public long YearFounded { get; set; }
     }
 }

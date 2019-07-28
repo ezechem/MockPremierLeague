@@ -19,17 +19,10 @@ namespace MockPremierLeague.API.Controllers
     [ApiController]
     public class FixtureController : ControllerBase
     {
-        private readonly AppDbContext _appDbContext;
         private readonly IFixtureRepository _fixtureRepository;
-        private readonly IConfiguration _config;
-        private readonly IMapper _mapper;
-
-        public FixtureController(AppDbContext appDbContext, IFixtureRepository fixtureRepository, IConfiguration config, IMapper mapper)
+        public FixtureController(IFixtureRepository fixtureRepository)
         {
-            _appDbContext = appDbContext;
-            _fixtureRepository = fixtureRepository;
-            _config = config;
-            _mapper = mapper;
+            _fixtureRepository = fixtureRepository;            
         }
 
         [HttpPost]

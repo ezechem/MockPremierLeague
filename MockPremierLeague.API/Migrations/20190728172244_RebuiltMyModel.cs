@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MockPremierLeague.API.Migrations
 {
-    public partial class InitialModel : Migration
+    public partial class RebuiltMyModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -56,25 +56,6 @@ namespace MockPremierLeague.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Fixtures",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    HomeTeam = table.Column<int>(nullable: false),
-                    AwayTeam = table.Column<int>(nullable: false),
-                    MatchCode = table.Column<string>(nullable: true),
-                    Staduim = table.Column<string>(nullable: true),
-                    MatchDate = table.Column<DateTime>(type: "date", nullable: false),
-                    MatchTime = table.Column<TimeSpan>(nullable: false),
-                    Status = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Fixtures", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Teams",
                 columns: table => new
                 {
@@ -84,6 +65,7 @@ namespace MockPremierLeague.API.Migrations
                     Code = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     CoachName = table.Column<string>(nullable: true),
+                    Stadium = table.Column<string>(nullable: true),
                     YearFounded = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
@@ -197,6 +179,36 @@ namespace MockPremierLeague.API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Fixtures",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    HomeTeamId = table.Column<int>(nullable: false),
+                    AwayTeamId = table.Column<int>(nullable: false),
+                    MatchCode = table.Column<string>(nullable: true),
+                    Staduim = table.Column<string>(nullable: true),
+                    MatchDate = table.Column<DateTime>(type: "date", nullable: false),
+                    MatchTime = table.Column<TimeSpan>(nullable: false),
+                    Status = table.Column<bool>(nullable: false),
+                    FixtureURL = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Fixtures", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Fixtures_Teams_AwayTeamId",
+                        column: x => x.AwayTeamId,
+                        principalTable: "Teams",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Fixtures_Teams_HomeTeamId",
+                        column: x => x.HomeTeamId,
+                        principalTable: "Teams",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -235,6 +247,16 @@ namespace MockPremierLeague.API.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fixtures_AwayTeamId",
+                table: "Fixtures",
+                column: "AwayTeamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fixtures_HomeTeamId",
+                table: "Fixtures",
+                column: "HomeTeamId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -258,13 +280,13 @@ namespace MockPremierLeague.API.Migrations
                 name: "Fixtures");
 
             migrationBuilder.DropTable(
-                name: "Teams");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Teams");
         }
     }
 }

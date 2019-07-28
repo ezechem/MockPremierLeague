@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockPremierLeague.API", "MockPremierLeague.API\MockPremierLeague.API.csproj", "{A2643F56-239F-469B-8228-AF9A063A484D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockPremierLeague.Test", "MockPremierLeague.Test\MockPremierLeague.Test.csproj", "{4605C72E-2654-4B53-9561-622B8D7551E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockPremierLeague.NUnitTest", "MockPremierLeague.NUnitTest\MockPremierLeague.NUnitTest.csproj", "{2B3E997D-1014-4E2B-A3F8-671D0FDB4873}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A2643F56-239F-469B-8228-AF9A063A484D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2643F56-239F-469B-8228-AF9A063A484D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2643F56-239F-469B-8228-AF9A063A484D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4605C72E-2654-4B53-9561-622B8D7551E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4605C72E-2654-4B53-9561-622B8D7551E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4605C72E-2654-4B53-9561-622B8D7551E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4605C72E-2654-4B53-9561-622B8D7551E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B3E997D-1014-4E2B-A3F8-671D0FDB4873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3E997D-1014-4E2B-A3F8-671D0FDB4873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3E997D-1014-4E2B-A3F8-671D0FDB4873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3E997D-1014-4E2B-A3F8-671D0FDB4873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

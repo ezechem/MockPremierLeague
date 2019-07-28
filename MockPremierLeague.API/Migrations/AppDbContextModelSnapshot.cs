@@ -160,6 +160,8 @@ namespace MockPremierLeague.API.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<string>("Stadium");
+
                     b.Property<long>("YearFounded");
 
                     b.HasKey("Id");

@@ -1,0 +1,52 @@
+[
+  {
+    "HomeTeamId": 1,
+    "AwayTeamId": 2,
+    "MatchCode": "Fixture1",
+    "Staduim": "Stamford Bridge",
+    "MatchDate": "2019-06-01",
+    "MatchTime": "16:00:00",
+    "Status": false,
+    "FixtureURL": "Fixture1"
+  },
+  {
+    "HomeTeamId": 3,
+    "AwayTeamId": 4,
+    "MatchCode": "Fixture2",
+    "Staduim": "Anfield",
+    "MatchDate": "2019-06-01",
+    "MatchTime": "16:00:00",
+    "Status": false,
+    "FixtureURL": "Fixture2"
+  },
+  {
+    "HomeTeamId": 10,
+    "AwayTeamId": 5,
+    "MatchCode": "Fixture3",
+    "Staduim": "St. James' Park",
+    "MatchDate": "2019-06-01",
+    "MatchTime": "16:00:00",
+    "Status": false,
+    "FixtureURL": "Fixture3"
+  },
+  {
+    "HomeTeamId": 20,
+    "AwayTeamId": 11,
+    "MatchCode": "Fixture4",
+    "Staduim": "Vicarage Road",
+    "MatchDate": "2019-06-01",
+    "MatchTime": "16:00:00",
+    "Status": false,
+    "FixtureURL": "Fixture4"
+  },
+  {
+    "HomeTeamId": 15,
+    "AwayTeamId": 8,
+    "MatchCode": "Fixture5",
+    "Staduim": "Molineux Stadium",
+    "MatchDate": "2019-06-01",
+    "MatchTime": "16:00:00",
+    "Status": false,
+    "FixtureURL": "Fixture5"
+  }
+]

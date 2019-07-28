@@ -98,7 +98,8 @@ namespace MockPremierLeague.API.Services
                     .Where(f => f.Name.Contains((string)searchParams)
                     || f.Code.Contains((string)searchParams)
                     || f.Address.Contains((string)searchParams)
-                    || f.CoachName.Contains((string)searchParams))
+                    || f.CoachName.Contains((string)searchParams)
+                    || f.Stadium.Contains((string)searchParams))
                     .ToListAsync();
             }
 

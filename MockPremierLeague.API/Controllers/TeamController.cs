@@ -19,18 +19,11 @@ namespace MockPremierLeague.API.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-
-        private readonly AppDbContext _appDbContext;
         private readonly ITeamRepository _teamRepository;
-        private readonly IConfiguration _config;
-        private readonly IMapper _mapper;
 
-        public TeamController(AppDbContext appDbContext, ITeamRepository teamRepository, IConfiguration config, IMapper mapper)
+        public TeamController(ITeamRepository teamRepository)
         {
-            _appDbContext = appDbContext;
             _teamRepository = teamRepository;
-            _config = config;
-            _mapper = mapper;
         }
 
         [HttpPost]

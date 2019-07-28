@@ -25,7 +25,7 @@ namespace MockPremierLeague.API.Data
         {
             if (!_userManager.Users.Any())
             {
-                var userData = System.IO.File.ReadAllText("Data/JSON/UserSeedData.json");
+                var userData = System.IO.File.ReadAllText("Data/JSON/users.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
                 var roles = new List<Role>
                 {
@@ -58,7 +58,22 @@ namespace MockPremierLeague.API.Data
                     _userManager.AddToRolesAsync(admin, new[] { "Admin"}).Wait();
                 }
             }
+            if (!_appDbContext.Teams.Any())
+            {
+                var teamData = System.IO.File.ReadAllText("Data/JSON/team.json");
+                var teams = JsonConvert.DeserializeObject<List<Team>>(teamData);
+
+                _appDbContext.AddRange(teams);
+            }           
             _appDbContext.SaveChanges();
+            if (!_appDbContext.Fixtures.Any())
+            {
+                var fixtureData = System.IO.File.ReadAllText("Data/JSON/fixtures.json");
+                var fixtures = JsonConvert.DeserializeObject<List<Fixture>>(fixtureData);
+
+                _appDbContext.AddRange(fixtures);
+            }
+
         }
     }
 }

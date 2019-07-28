@@ -18,5 +18,7 @@ namespace MockPremierLeague.API.Dtos
         public string CoachName { get; set; }
         [Required]
         public long YearFounded { get; set; }
+        [Required]
+        public string Stadium { get; set; }
     }
 }

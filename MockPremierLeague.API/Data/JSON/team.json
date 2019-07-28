@@ -1,0 +1,162 @@
+[
+  {
+    "Name": "Arsenal",
+    "Code": "ARS",
+    "Address": "Arsenal",
+    "CoachName": "Unai Emery",
+    "YearFounded": 1886,
+    "Stadium": "Emirates Stadium"
+  },
+  {
+    "Name": "Bournemouth",
+    "Code": "BOU",
+    "Address": "Bournemouth",
+    "CoachName": "Eddie Howe",
+    "YearFounded": 1899,
+    "Stadium": "Vitality Stadium"
+  },
+  {
+    "Name": "Brighton & Hove Albion",
+    "Code": "BHA",
+    "Address": "Brighton",
+    "CoachName": "Chris Hughton",
+    "YearFounded": 1901,
+    "Stadium": "Amex Stadium"
+  },
+  {
+    "Name": "Burnley",
+    "Code": "BUR",
+    "Address": "Burnley",
+    "CoachName": "Sean Dyche",
+    "YearFounded": 1882,
+    "Stadium": "Turf Moor"
+  },
+  {
+    "Name": "Cardiff City",
+    "Code": "CAR",
+    "Address": "Cardiff",
+    "CoachName": "Ole Gunnar Solskjær",
+    "YearFounded": 1899,
+    "Stadium": "Neil Warnock"
+  },
+  {
+    "Name": "Chelsea",
+    "Code": "CHE",
+    "Address": "Chelsea",
+    "CoachName": "Frank Lampard",
+    "YearFounded": 1905,
+    "Stadium": "Stamford Bridge"
+  },
+  {
+    "Name": "Crystal Palace",
+    "Code": "CRY",
+    "Address": "crystalpalace",
+    "CoachName": "Roy Hodgson",
+    "YearFounded": 1905,
+    "Stadium": "Selhurst Park"
+  },
+  {
+    "Name": "Everton",
+    "Code": "EVE",
+    "Address": "Everton",
+    "CoachName": "Marco Silva",
+    "YearFounded": 1878,
+    "Stadium": "Goodison Park"
+  },
+  {
+    "Name": "Fulham",
+    "Code": "FUL",
+    "Address": "Fulham",
+    "CoachName": "Scott Parker",
+    "YearFounded": 1879,
+    "Stadium": "Craven Cottage"
+  },
+  {
+    "Name": "Huddersfield Town",
+    "Code": "HUD",
+    "Address": "Huddersfield",
+    "CoachName": "Jan Siewert",
+    "YearFounded": 1908,
+    "Stadium": "John Smith's Stadium"
+  },
+  {
+    "Name": "Leicester City",
+    "Code": "LEI",
+    "Address": "Leicester",
+    "CoachName": "Brendan Rogers",
+    "YearFounded": 1884,
+    "Stadium": "King Power Stadium"
+  },
+  {
+    "Name": "Liverpool",
+    "Code": "LIV",
+    "Address": "Liverpool",
+    "CoachName": "Jürgen Klopp",
+    "YearFounded": 1892,
+    "Stadium": "Anfield"
+  },
+  {
+    "Name": "Manchester City",
+    "Code": "MCI",
+    "Address": "Manchester City",
+    "CoachName": "Josep Guardiola",
+    "YearFounded": 1880,
+    "Stadium": "Etihad Stadium"
+  },
+  {
+    "Name": "Manchester United",
+    "Code": "MUN",
+    "Address": "Manchester",
+    "CoachName": "Ole Gunnar Solskjær",
+    "YearFounded": 1878,
+    "Stadium": "Old Trafford"
+  },
+  {
+    "Name": "Newcastle United",
+    "Code": "NEW",
+    "Address": "Newcastle",
+    "CoachName": "Rafa Benítez",
+    "YearFounded": 1892,
+    "Stadium": "St. James' Park"
+  },
+  {
+    "Name": "Southampton",
+    "Code": "SOU",
+    "Address": "Southampton",
+    "CoachName": "Ralph Hasenhüttl",
+    "YearFounded": 1885,
+    "Stadium": "St. Mary's Stadium"
+  },
+  {
+    "Name": "Tottenham Hotspur",
+    "Code": "TOT",
+    "Address": "Tottenham",
+    "CoachName": "Mauricio Pochettino",
+    "YearFounded": 1882,
+    "Stadium": "Tottenham Hotspur Stadium"
+  },
+  {
+    "Name": "Watford",
+    "Code": "WAT",
+    "Address": "Watford",
+    "CoachName": "Javi Gracia",
+    "YearFounded": 1881,
+    "Stadium": "Vicarage Road"
+  },
+  {
+    "Name": "West Ham United",
+    "Code": "WHU",
+    "Address": "West Ham",
+    "CoachName": "Manuel Pellegrini",
+    "YearFounded": 1900,
+    "Stadium": "London Stadium"
+  },
+  {
+    "Name": "Wolverhampton Wanderers",
+    "Code": "WOL",
+    "Address": "Wolves",
+    "CoachName": "Nuno",
+    "YearFounded": 1877,
+    "Stadium": "Molineux Stadium"
+  }  
+]
