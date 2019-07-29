@@ -264,13 +264,13 @@ namespace MockPremierLeague.API.Controllers
             var response = new BaseReturnDto();
             try
             {
-                var fixture = await _teamRepository.SearchTeam(searchParam);
-                if (fixture != null)
+                var teams = await _teamRepository.SearchTeam(searchParam);
+                if (teams.Count> 0)
                 {
                     response.Status = nameof(ResponseCode.Success);
                     response.StatusCode = (int)ResponseCode.Success;
                     response.Message = "Search completed succesfully";
-                    response.ModelToReturn = fixture;
+                    response.ModelToReturn = teams;
                     return Ok(response);
                 }
 

@@ -365,7 +365,7 @@ namespace MockPremierLeague.API.Controllers
             try
             {
                 var fixture = await _fixtureRepository.SearchFixture(searchParam);
-                if (fixture != null)
+                if (fixture.Count > 0)
                 {
                     response.Status = nameof(ResponseCode.Success);
                     response.StatusCode = (int)ResponseCode.Success;
