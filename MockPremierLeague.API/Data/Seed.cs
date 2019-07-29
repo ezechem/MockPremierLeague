@@ -73,6 +73,7 @@ namespace MockPremierLeague.API.Data
 
                 _appDbContext.AddRange(fixtures);
             }
+            _appDbContext.SaveChanges();
 
         }
     }
